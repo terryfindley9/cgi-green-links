@@ -29,18 +29,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .page{max-width:480px;margin:0 auto;position:relative}
 
 /* hero: photo-style stage fading into the page colour */
-.hero{position:relative;height:min(112vw,540px);background:linear-gradient(180deg,var(--leaf) 0%,#6CC79A 55%,var(--ground) 100%);overflow:hidden}
-.hero .pack{position:absolute;bottom:0;display:block;filter:drop-shadow(0 14px 18px rgba(20,67,61,.28))}
-.hero .p1{left:-4%;width:46%;transform:rotate(-6deg);bottom:12%}
-.hero .p2{left:27%;width:50%;bottom:8%;z-index:2}
-.hero .p3{right:-4%;width:46%;transform:rotate(6deg);bottom:12%}
-.hero::after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(180deg,rgba(169,221,188,0),var(--ground))}
+.hero{position:relative;height:min(112vw,540px);background:var(--leaf);overflow:hidden}
+.hero .beach{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:70px;z-index:2;pointer-events:none;overflow:hidden}
+.waves svg{position:absolute;left:0;bottom:0;width:200%;height:100%}
+.waves .w1{fill:var(--ground);opacity:.5}
+.waves .w2{fill:var(--ground)}
 .chip{position:absolute;top:max(16px,env(safe-area-inset-top));width:48px;height:48px;border-radius:16px;background:rgba(255,250,236,.78);display:grid;place-items:center;z-index:5;box-shadow:0 2px 6px rgba(20,67,61,.15)}
 .chip.l{left:16px}.chip.r{right:16px}
 .chip img{width:32px;height:32px;border-radius:50%}
 .chip svg{width:22px;height:22px;stroke:var(--kelp);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-.brand{margin-top:-64px;position:relative;z-index:3;text-align:center;padding:0 16px}
+.brand{margin-top:-36px;position:relative;z-index:3;text-align:center;padding:0 16px}
 .word{font:900 clamp(3.4rem,17vw,5rem)/.95 var(--font);letter-spacing:-.045em;color:var(--cream);
   -webkit-text-stroke:0;
   text-shadow:2px 2px 0 var(--kelp),4px 4px 0 var(--kelp),-1px -1px 0 var(--kelp),1px -1px 0 var(--kelp),-1px 1px 0 var(--kelp),
@@ -105,11 +105,27 @@ footer{text-align:center;font-size:.8125rem;line-height:1.5;color:var(--kelp);pa
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
 @media (prefers-reduced-motion:no-preference){
-  .hero .pack{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
-  .hero .p1{animation-delay:.05s}.hero .p2{animation-delay:.15s}.hero .p3{animation-delay:.25s}
-  @keyframes rise{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
 }
 @media (prefers-reduced-motion:reduce){.tabs .thumb,.pill,.prod{transition:none}}
+
+/* water effect */
+body{background-color:var(--ground);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012 .02' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.6 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");background-size:360px 360px;background-attachment:fixed}
+.pill,.prod,.igcard,.btn,.tabs button{overflow:hidden}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);pointer-events:none;animation:ripple .7s ease-out forwards;z-index:3}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+@media (prefers-reduced-motion:no-preference){
+  body{animation:drift 26s linear infinite}
+  @keyframes drift{from{background-position:0 0}to{background-position:360px 220px}}
+  .waves .w1{animation:wave 11s linear infinite}
+  .waves .w2{animation:wave 7s linear infinite reverse}
+  @keyframes wave{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .hero .beach{animation:sway 14s ease-in-out infinite alternate}
+  @keyframes sway{from{transform:scale(1.04) translateY(0)}to{transform:scale(1.08) translateY(-6px)}}
+  .word{animation:bob 6s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-4px)}}
+  .tabs .thumb{transition:transform .5s cubic-bezier(.3,1.4,.4,1)}
+}
+@media (prefers-reduced-motion:reduce){.waves svg,.rip{animation:none}}
 @media (min-width:700px){
   body{background:var(--ground)}
   .page{margin-top:0}
@@ -122,9 +138,8 @@ footer{text-align:center;font-size:.8125rem;line-height:1.5;color:var(--kelp);pa
   <section class="hero" aria-label="CGI-Green SeaMoss products">
     <a class="chip l" href="https://cgi-green.com?utm_source=instagram&utm_medium=link_in_bio&utm_campaign=bio" aria-label="CGI-Green website"><img src="img/logo.png" alt=""></a>
     <button class="chip r" id="share" aria-label="Share this page"><svg viewBox="0 0 24 24"><path d="M12 15V3m0 0L8 7m4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></button>
-    <img class="pack p1" src="img/gummy-apple.png" alt="CGI-Green Green Apple SeaMoss Gummies bottle">
-    <img class="pack p3" src="img/gummy-mango.png" alt="CGI-Green Mango SeaMoss Gummies bottle">
-    <img class="pack p2" src="img/gummy-strawberry.png" alt="CGI-Green Strawberry SeaMoss Gummies bottle">
+    <img class="beach" src="img/hero-beach.jpg" alt="CGI-Green SeaMoss gels and gummies on a sandy beach with turquoise water behind" width="1120" height="1400" fetchpriority="high">
+    <div class="waves" aria-hidden="true"><svg class="w1" viewBox="0 0 720 70" preserveAspectRatio="none"><path d="M0 30 C 120 6 240 66 360 36 S 600 6 720 36 V70 H0Z"/></svg><svg class="w2" viewBox="0 0 720 70" preserveAspectRatio="none"><path d="M0 36 C 120 6 240 66 360 36 S 600 6 720 36 V70 H0Z"/></svg></div>
   </section>
 
   <header class="brand">
@@ -209,6 +224,10 @@ footer{text-align:center;font-size:.8125rem;line-height:1.5;color:var(--kelp);pa
   }
   document.getElementById('share').onclick=function(){share(location.href)};
   document.querySelectorAll('[data-share]').forEach(function(b){b.onclick=function(e){e.stopPropagation();share(b.dataset.share)}});
+  document.addEventListener('pointerdown',function(e){var t=e.target.closest('.pill,.prod,.btn,.visit a');if(!t||e.target.closest('.more'))return;
+    var r=t.getBoundingClientRect(),d=Math.max(r.width,r.height)*2,x=document.createElement('span');
+    x.className='rip';x.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px';
+    if(getComputedStyle(t).position==='static')t.style.position='relative';t.appendChild(x);setTimeout(function(){x.remove()},750)});
   document.getElementById('y').textContent=new Date().getFullYear();
 })();
 </script>
