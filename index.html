@@ -8,7 +8,7 @@
 <meta property="og:title" content="CGI-Green SeaMoss">
 <meta property="og:description" content="Wildcrafted Caribbean sea moss, made for a simple daily spoonful.">
 <meta property="og:image" content="img/gel-mango.png">
-<meta name="theme-color" content="#0B7285">
+<meta name="theme-color" content="#0B7A52">
 <link rel="icon" href="img/logo.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 @font-face{font-family:"Articulat CF";font-weight:100 300;font-display:swap;src:url("https://cdn.shopify.com/s/files/1/0459/9280/4502/files/fonnts.com-Articulat_CF_Light.otf?v=1733982422") format("opentype")}
 :root{
   --forest:#006837;--kelp:#14433D;--cream:#FFFAEC;--sand:#F4EBD0;--ink:#12261F;--muted:#4A5F55;
-  --leaf:#0A5F73;--ground:#0B7285;--focus:#00532B;
+  --leaf:#0A6444;--ground:#0B7A52;--focus:#00532B;
   --font:"Articulat CF","Figtree",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
@@ -154,9 +154,9 @@ body{background-color:var(--ground);background-image:url("data:image/svg+xml,%3C
 
 /* liquid glass (iOS style) */
 :root{--lg-hi:rgba(255,255,255,.95);
- --lg-sh:0 10px 30px rgba(20,67,61,.18),0 2px 6px rgba(20,67,61,.10),inset 1.5px 1.5px 2px var(--lg-hi),inset -1.5px -2px 3px rgba(255,255,255,.35),inset 0 0 18px rgba(255,255,255,.32),inset 0 -10px 18px -8px rgba(0,110,150,.16)}
+ --lg-sh:0 10px 30px rgba(20,67,61,.18),0 2px 6px rgba(20,67,61,.10),inset 1.5px 1.5px 2px var(--lg-hi),inset -1.5px -2px 3px rgba(255,255,255,.35),inset 0 0 18px rgba(255,255,255,.32),inset 0 -10px 18px -8px rgba(0,120,70,.16)}
 body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;
- background:radial-gradient(38% 30% at 20% 22%,rgba(0,205,200,.38),transparent 70%),radial-gradient(34% 28% at 80% 45%,rgba(130,225,235,.38),transparent 70%),radial-gradient(40% 30% at 30% 80%,rgba(0,50,110,.55),transparent 70%)}
+ background:radial-gradient(38% 30% at 20% 22%,rgba(70,210,140,.36),transparent 70%),radial-gradient(34% 28% at 80% 45%,rgba(170,240,195,.38),transparent 70%),radial-gradient(40% 30% at 30% 80%,rgba(0,70,45,.55),transparent 70%)}
 .pill,.prod,.igcard,.tabs,.chip,.ver,.visit a,.social a,.btn{position:relative;--mx:30%;--my:0%}
 .chip{position:absolute}
 .pill,.prod,.igcard,.chip,.ver,.visit a,.social a{background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,250,236,.22) 55%,rgba(255,255,255,.38));
@@ -190,7 +190,7 @@ body{color:var(--cream)}
 footer a{color:var(--cream)}
 .pill,.prod,.igcard,.ver,.visit a,.chip,.social a{color:var(--kelp)}
 .pill .tx em,.prod span,.igcard p{color:var(--muted)}
-.tabs{background:linear-gradient(135deg,rgba(6,40,52,.62),rgba(6,40,52,.42))}
+.tabs{background:linear-gradient(135deg,rgba(5,52,36,.62),rgba(5,52,36,.42))}
 .tabs button{color:var(--cream)}.tabs button[aria-selected=true]{color:var(--ink)}
 .social svg{fill:var(--kelp)}
 
@@ -201,7 +201,31 @@ footer a{color:var(--cream)}
 .chip{position:fixed;z-index:6}
 .chip.l{left:max(16px,calc(50% - 224px))}.chip.r{right:max(16px,calc(50% - 224px))}
 .brand,.tabs,main,.social,.visit,footer{position:relative;z-index:1}
-.veil{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,114,133,0) 30%,var(--ground) 100%);opacity:0}
+.veil{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,122,82,0) 30%,var(--ground) 100%);opacity:0}
+
+/* white text on green glass */
+:root{--wt:#fff}
+body,.tagline,footer,footer a,.word{color:#fff}
+.pill,.prod,.igcard,.ver,.visit a,.chip,.social a{color:#fff}
+.pill,.prod,.igcard,.chip,.ver,.visit a,.social a{background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.08) 55%,rgba(255,255,255,.18));border-color:rgba(255,255,255,.5)}
+.igcard{background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,.1) 55%,rgba(255,255,255,.2))}
+.pill .tx,.prod b,.igcard h2{color:#fff;text-shadow:0 1px 2px rgba(0,50,30,.35)}
+.pill .tx em,.prod span,.igcard p{color:rgba(255,255,255,.86)}
+.more svg{fill:rgba(255,255,255,.9)}
+.more:hover{background:rgba(255,255,255,.16)}
+.chip svg{stroke:#fff}
+.social svg{fill:#fff}
+.ver i{background:#fff}.ver svg{stroke:#0B7A52}
+.prod img.c{background:rgba(244,235,208,.5)}
+.tabs button,.tabs button[aria-selected=true]{color:#fff}
+.tabs button[aria-selected=true]{color:var(--ink)}
+.word{text-shadow:2px 2px 0 var(--kelp),4px 4px 0 var(--kelp),-1px -1px 0 var(--kelp),1px -1px 0 var(--kelp),-1px 1px 0 var(--kelp),3px 5px 0 var(--kelp),5px 3px 0 var(--kelp)}
+.word small{color:#fff}
+
+.pill,.prod,.igcard,.ver,.visit a,.social a{background:linear-gradient(135deg,rgba(5,60,40,.34),rgba(5,60,40,.2) 55%,rgba(5,60,40,.3))}
+.chip{background:linear-gradient(135deg,rgba(5,60,40,.42),rgba(5,60,40,.28))}
+.pill::before,.prod::before,.igcard::before,.visit a::before{opacity:.4}
+.pill .th{box-shadow:0 2px 6px rgba(0,40,25,.35)}
 </style>
 </head>
 <body>
