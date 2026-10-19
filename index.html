@@ -8,7 +8,7 @@
 <meta property="og:title" content="CGI-Green SeaMoss">
 <meta property="og:description" content="Wildcrafted Caribbean sea moss, made for a simple daily spoonful.">
 <meta property="og:image" content="img/gel-mango.png">
-<meta name="theme-color" content="#0B7A52">
+<meta name="theme-color" content="#075A3C">
 <link rel="icon" href="img/logo.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 @font-face{font-family:"Articulat CF";font-weight:100 300;font-display:swap;src:url("https://cdn.shopify.com/s/files/1/0459/9280/4502/files/fonnts.com-Articulat_CF_Light.otf?v=1733982422") format("opentype")}
 :root{
   --forest:#006837;--kelp:#14433D;--cream:#FFFAEC;--sand:#F4EBD0;--ink:#12261F;--muted:#4A5F55;
-  --leaf:#0A6444;--ground:#0B7A52;--focus:#00532B;
+  --leaf:#064A33;--ground:#075A3C;--focus:#00532B;
   --font:"Articulat CF","Figtree",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
@@ -156,7 +156,7 @@ body{background-color:var(--ground);background-image:url("data:image/svg+xml,%3C
 :root{--lg-hi:rgba(255,255,255,.95);
  --lg-sh:0 10px 30px rgba(20,67,61,.18),0 2px 6px rgba(20,67,61,.10),inset 1.5px 1.5px 2px var(--lg-hi),inset -1.5px -2px 3px rgba(255,255,255,.35),inset 0 0 18px rgba(255,255,255,.32),inset 0 -10px 18px -8px rgba(0,120,70,.16)}
 body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;
- background:radial-gradient(38% 30% at 20% 22%,rgba(70,210,140,.36),transparent 70%),radial-gradient(34% 28% at 80% 45%,rgba(170,240,195,.38),transparent 70%),radial-gradient(40% 30% at 30% 80%,rgba(0,70,45,.55),transparent 70%)}
+ background:radial-gradient(38% 30% at 20% 22%,rgba(45,170,110,.34),transparent 70%),radial-gradient(34% 28% at 80% 45%,rgba(130,210,165,.3),transparent 70%),radial-gradient(40% 30% at 30% 80%,rgba(0,45,30,.6),transparent 70%)}
 .pill,.prod,.igcard,.tabs,.chip,.ver,.visit a,.social a,.btn{position:relative;--mx:30%;--my:0%}
 .chip{position:absolute}
 .pill,.prod,.igcard,.chip,.ver,.visit a,.social a{background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,250,236,.22) 55%,rgba(255,255,255,.38));
@@ -201,7 +201,7 @@ footer a{color:var(--cream)}
 .chip{position:fixed;z-index:6}
 .chip.l{left:max(16px,calc(50% - 224px))}.chip.r{right:max(16px,calc(50% - 224px))}
 .brand,.tabs,main,.social,.visit,footer{position:relative;z-index:1}
-.veil{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,122,82,0) 30%,var(--ground) 100%);opacity:0}
+.veil{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(7,90,60,0) 30%,var(--ground) 100%);opacity:0}
 
 /* white text on green glass */
 :root{--wt:#fff}
@@ -215,7 +215,7 @@ body,.tagline,footer,footer a,.word{color:#fff}
 .more:hover{background:rgba(255,255,255,.16)}
 .chip svg{stroke:#fff}
 .social svg{fill:#fff}
-.ver i{background:#fff}.ver svg{stroke:#0B7A52}
+.ver i{background:#fff}.ver svg{stroke:#075A3C}
 .prod img.c{background:rgba(244,235,208,.5)}
 .tabs button,.tabs button[aria-selected=true]{color:#fff}
 .tabs button[aria-selected=true]{color:var(--ink)}
@@ -226,6 +226,11 @@ body,.tagline,footer,footer a,.word{color:#fff}
 .chip{background:linear-gradient(135deg,rgba(5,60,40,.42),rgba(5,60,40,.28))}
 .pill::before,.prod::before,.igcard::before,.visit a::before{opacity:.4}
 .pill .th{box-shadow:0 2px 6px rgba(0,40,25,.35)}
+
+/* logo: always whole, never circle-cropped */
+.chip.l{background:var(--cream);border-color:rgba(255,255,255,.8)}
+.chip.l img{width:34px;height:34px;border-radius:0;object-fit:contain}
+.pill .th.dried{object-fit:contain;padding:3px;background:#fff}
 </style>
 </head>
 <body>
@@ -262,9 +267,9 @@ body,.tagline,footer,footer a,.word{color:#fff}
 
     <div class="pill"><a class="go" href="https://cgi-green.com/pages/moss-bites?utm_source=instagram&utm_medium=link_in_bio&utm_campaign=bio" aria-label="Shop Moss Bites"></a><img class="th" src="img/bites.png" alt="" style="object-fit:contain;padding:5px"><span class="tx">shop Moss Bites</span><button class="more" data-share="https://cgi-green.com/pages/moss-bites" aria-label="Share Moss Bites link"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg></button></div>
 
-    <div class="pill"><a class="go" href="https://cgi-green.com/collections/dried-products?utm_source=instagram&utm_medium=link_in_bio&utm_campaign=bio" aria-label="Wholesale Dried Sea Moss"></a><img class="th" src="img/gel-pineapple.png" alt=""><span class="tx">wholesale Dried Sea Moss</span><button class="more" data-share="https://cgi-green.com/collections/dried-products" aria-label="Share wholesale link"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg></button></div>
+    <div class="pill"><a class="go" href="https://cgi-green.com/collections/dried-products?utm_source=instagram&utm_medium=link_in_bio&utm_campaign=bio" aria-label="Wholesale Dried Sea Moss"></a><img class="th dried" src="img/dried.jpg" alt=""><span class="tx">wholesale Dried Sea Moss</span><button class="more" data-share="https://cgi-green.com/collections/dried-products" aria-label="Share wholesale link"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg></button></div>
 
-    <div class="pill"><a class="go" href="https://www.tiktok.com/@cgigreen_seamoss" rel="noopener" aria-label="Follow CGI-Green on TikTok"></a><img class="th" src="img/logo.png" alt="" style="object-fit:contain;padding:3px;background:#C9EAD6"><span class="tx">follow us on tiktok!<em>@cgigreen_seamoss</em></span><button class="more" data-share="https://www.tiktok.com/@cgigreen_seamoss" aria-label="Share TikTok link"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg></button></div>
+    <div class="pill"><a class="go" href="https://www.tiktok.com/@cgigreen_seamoss" rel="noopener" aria-label="Follow CGI-Green on TikTok"></a><img class="th" src="img/logo.png" alt="" style="object-fit:contain;padding:10px;background:var(--cream)"><span class="tx">follow us on tiktok!<em>@cgigreen_seamoss</em></span><button class="more" data-share="https://www.tiktok.com/@cgigreen_seamoss" aria-label="Share TikTok link"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg></button></div>
 
     <div class="igcard">
       <div class="grid" aria-hidden="true">
