@@ -8,7 +8,7 @@
 <meta property="og:title" content="CGI-Green SeaMoss">
 <meta property="og:description" content="Wildcrafted Caribbean sea moss, made for a simple daily spoonful.">
 <meta property="og:image" content="img/gel-mango.png">
-<meta name="theme-color" content="#5BD0E0">
+<meta name="theme-color" content="#0B7285">
 <link rel="icon" href="img/logo.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 <style>
 :root{
   --forest:#006837;--kelp:#14433D;--cream:#FFFAEC;--sand:#F4EBD0;--ink:#12261F;--muted:#4A5F55;
-  --leaf:#1FA9C4;--ground:#5BD0E0;--focus:#00532B;
+  --leaf:#0A5F73;--ground:#0B7285;--focus:#00532B;
   --font:"Articulat CF","Articulat_CF","Figtree",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
@@ -155,7 +155,7 @@ body{background-color:var(--ground);background-image:url("data:image/svg+xml,%3C
 :root{--lg-hi:rgba(255,255,255,.95);
  --lg-sh:0 10px 30px rgba(20,67,61,.18),0 2px 6px rgba(20,67,61,.10),inset 1.5px 1.5px 2px var(--lg-hi),inset -1.5px -2px 3px rgba(255,255,255,.35),inset 0 0 18px rgba(255,255,255,.32),inset 0 -10px 18px -8px rgba(0,110,150,.16)}
 body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;
- background:radial-gradient(38% 30% at 20% 22%,rgba(0,170,205,.5),transparent 70%),radial-gradient(34% 28% at 80% 45%,rgba(225,250,255,.75),transparent 70%),radial-gradient(40% 30% at 30% 80%,rgba(0,130,190,.4),transparent 70%)}
+ background:radial-gradient(38% 30% at 20% 22%,rgba(0,205,200,.38),transparent 70%),radial-gradient(34% 28% at 80% 45%,rgba(130,225,235,.38),transparent 70%),radial-gradient(40% 30% at 30% 80%,rgba(0,50,110,.55),transparent 70%)}
 .pill,.prod,.igcard,.tabs,.chip,.ver,.visit a,.social a,.btn{position:relative;--mx:30%;--my:0%}
 .chip{position:absolute}
 .pill,.prod,.igcard,.chip,.ver,.visit a,.social a{background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,250,236,.22) 55%,rgba(255,255,255,.38));
@@ -182,6 +182,16 @@ body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none
  .pill:hover,.prod:hover{transform:translateY(-2px) scale(1.012)}
  .pill:active,.prod:active,.btn:active,.visit a:active,.social a:active{transform:scale(.965,.93);transition-duration:.12s}
 }
+
+/* deep ocean: light text on the water, glass stays light */
+body{color:var(--cream)}
+.tagline,footer{color:var(--cream)}
+footer a{color:var(--cream)}
+.pill,.prod,.igcard,.ver,.visit a,.chip,.social a{color:var(--kelp)}
+.pill .tx em,.prod span,.igcard p{color:var(--muted)}
+.tabs{background:linear-gradient(135deg,rgba(6,40,52,.62),rgba(6,40,52,.42))}
+.tabs button{color:var(--cream)}.tabs button[aria-selected=true]{color:var(--ink)}
+.social svg{fill:var(--kelp)}
 </style>
 </head>
 <body>
