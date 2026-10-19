@@ -14,10 +14,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;800;900&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:"Articulat CF";font-weight:600 900;font-display:swap;src:url("https://cdn.shopify.com/s/files/1/0459/9280/4502/files/fonnts.com-Articulat_CF_Bold.otf?v=1734077455") format("opentype")}
+@font-face{font-family:"Articulat CF";font-weight:400 500;font-display:swap;src:url("https://cdn.shopify.com/s/files/1/0459/9280/4502/files/ArticulatCF-Normal.ttf?v=1738060844") format("truetype")}
+@font-face{font-family:"Articulat CF";font-weight:100 300;font-display:swap;src:url("https://cdn.shopify.com/s/files/1/0459/9280/4502/files/fonnts.com-Articulat_CF_Light.otf?v=1733982422") format("opentype")}
 :root{
   --forest:#006837;--kelp:#14433D;--cream:#FFFAEC;--sand:#F4EBD0;--ink:#12261F;--muted:#4A5F55;
   --leaf:#0A5F73;--ground:#0B7285;--focus:#00532B;
-  --font:"Articulat CF","Articulat_CF","Figtree",system-ui,sans-serif;
+  --font:"Articulat CF","Figtree",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%;background:var(--ground)}
@@ -199,10 +202,6 @@ footer a{color:var(--cream)}
 .chip{position:fixed;z-index:6}
 .chip.l{left:max(16px,calc(50% - 224px))}.chip.r{right:max(16px,calc(50% - 224px))}
 .brand,.tabs,main,.social,.visit,footer{position:relative;z-index:1}
-.word-fix{position:fixed;top:6px;left:50%;z-index:0;transform:translateX(-50%) scale(.46);transform-origin:top center;opacity:0;pointer-events:none;
- font:900 clamp(3.4rem,17vw,5rem)/.95 var(--font);letter-spacing:-.045em;color:var(--cream);white-space:nowrap;
- text-shadow:2px 2px 0 var(--kelp),4px 4px 0 var(--kelp),-1px -1px 0 var(--kelp),1px -1px 0 var(--kelp),-1px 1px 0 var(--kelp),3px 5px 0 var(--kelp),5px 3px 0 var(--kelp);transition:opacity .25s ease}
-.word-fix.on{opacity:1}
 .veil{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,114,133,0) 30%,var(--ground) 100%);opacity:0}
 </style>
 </head>
@@ -221,7 +220,6 @@ footer a{color:var(--cream)}
   </section>
   <div class="hero-gap" aria-hidden="true"></div>
 
-  <div class="word-fix" id="wordfix" aria-hidden="true">CGI-Green</div>
 
   <header class="brand">
     <h1 class="word" id="word">CGI-Green<small>SeaMoss</small></h1>
@@ -306,12 +304,11 @@ footer a{color:var(--cream)}
     x.className='rip';x.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px';
     if(getComputedStyle(t).position==='static')t.style.position='relative';t.appendChild(x);setTimeout(function(){x.remove()},750)});
   document.addEventListener('pointermove',function(e){var t=e.target.closest&&e.target.closest('.pill,.prod,.igcard,.visit a,.btn,.social a');if(!t)return;var r=t.getBoundingClientRect();t.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');t.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')});
-  (function(){var hero=document.getElementById('hero'),beach=hero.querySelector('.beach'),veil=hero.querySelector('.veil'),word=document.getElementById('word'),wf=document.getElementById('wordfix'),tick=false;
+  (function(){var hero=document.getElementById('hero'),beach=hero.querySelector('.beach'),veil=hero.querySelector('.veil'),word=document.getElementById('word'),tick=false;
     function upd(){tick=false;var y=window.scrollY||0,h=hero.offsetHeight,p=Math.min(1,Math.max(0,y/(h*.72)));
       hero.style.opacity=(1-p*p).toFixed(3);hero.style.filter='blur('+(p*7).toFixed(1)+'px)';
       beach.style.transform='translateY('+(-p*48).toFixed(1)+'px) scale('+(1.06+p*.08).toFixed(3)+')';
-      veil.style.opacity=Math.min(1,p*1.2).toFixed(3);
-      wf.classList.toggle('on',word.getBoundingClientRect().bottom<64)}
+      veil.style.opacity=Math.min(1,p*1.2).toFixed(3);}
     window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});window.addEventListener('resize',upd);upd()})();
   document.getElementById('y').textContent=new Date().getFullYear();
 })();
